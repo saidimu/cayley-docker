@@ -5,10 +5,10 @@ A Docker image for [Cayley](https://github.com/google/cayley), an open-source gr
 ## Getting Started
 
 ```
-docker run -d saidimu/cayley
+docker run -d -p 64210:64210 saidimu/cayley
 ```
 
-Then open http://127.0.0.1:64210 from your browser for the web GUI.
+Then open `http://127.0.0.1:64210` from your browser for the web GUI.
 
 ## Getting Started with [fig](http://www.fig.sh/)
 
@@ -20,4 +20,4 @@ fig up -d
 fig logs
 ```
 
-Then open http://127.0.0.1:64210 from your browser for the web GUI.
+Then open `http://127.0.0.1:64210` from your browser for the web GUI.
