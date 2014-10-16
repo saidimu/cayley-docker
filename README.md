@@ -26,7 +26,7 @@ Then open `http://127.0.0.1:64210` from your browser for the web GUI.
 
   1. Create a mountable data directory `<data-dir>` on the host.
 
-  2. Create a Cayley config file at `<data-dir>/cayley.cfg`.
+  2. Create a [Cayley config file](https://github.com/google/cayley/blob/master/docs%2FConfiguration.md) at `<data-dir>/cayley.cfg`.
 
     ```json
     {
