@@ -2,7 +2,7 @@
 
 A Docker image for [Cayley](https://github.com/google/cayley), an open-source graph database inspired by [Freebase](http://freebase.com) and Google's [Knowledge Graph](http://www.google.com/insidesearch/features/search/knowledge.html).
 
-### Getting Started
+#### Getting Started
 
 ```
 docker run -d -p 64210:64210 saidimu/cayley
@@ -10,9 +10,9 @@ docker run -d -p 64210:64210 saidimu/cayley
 
 Then open `http://127.0.0.1:64210` from your browser for the web GUI.
 
-### Getting Started with [fig](http://www.fig.sh/)
+#### Getting Started with fig
 
-If you have [fig](http://www.fig.sh/) installed, clone this repository and run the following command from within the cloned repository folder
+If you have [fig](http://www.fig.sh/) installed, clone this repository and execute the following commands:
 ```
 git clone git@github.com:saidimu/cayley-docker.git
 cd cayley-docker
@@ -36,7 +36,10 @@ Then open `http://127.0.0.1:64210` from your browser for the web GUI.
     }
     ```
 
-  3. Start a container by mounting data directory:
+    Note that `listen_host` must be set to `0.0.0.0` for Cayley to be accesible from outside the container.
+
+
+  3. Start a container by mounting the data directory on the host to /data in the container:
 
     ```sh
     docker run -d -p 64210:64210 -v <data-dir>:/data saidimu/cayley
