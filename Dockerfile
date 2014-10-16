@@ -20,10 +20,10 @@ RUN \
 VOLUME /data
 
 # Define location of default conf file
-ENV CAYLEY_CFG /etc/cayley.cfg
+ENV CAYLEY_CFG /data/cayley.cfg
 
 # Copy default conf file
-ADD cayley.cfg /etc/cayley.cfg
+ADD cayley.cfg /data/cayley.cfg
 
 # Set working directory
 WORKDIR /opt/cayley
