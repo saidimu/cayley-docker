@@ -1,0 +1,5 @@
+cayley:
+  image: saidimu/cayley
+  ports:
+    - "64210:64210"
+

@@ -19,12 +19,18 @@ RUN \
 # Define mountable data folder
 VOLUME /data
 
-# Copy default conf file to mountable folder
-WORKDIR /opt/cayley
-ADD cayley.conf /data/
+# Define location of default conf file
+ENV CAYLEY_CFG /etc/cayley.cfg
 
-CMD cayley init -config=/data/cayley.conf && \
-    cayley http -config=/data/cayley.conf
+# Copy default conf file
+ADD cayley.cfg /etc/cayley.cfg
+
+# Set working directory
+WORKDIR /opt/cayley
+
+# Default commands
+CMD cayley init -config=$CAYLEY_CFG && \
+    cayley http -config=$CAYLEY_CFG
 
 # Expose ports.
 EXPOSE 64210
