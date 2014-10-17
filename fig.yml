@@ -1,5 +1,15 @@
 cayley:
-  image: saidimu/cayley
+  image: saidimu/cayley:v0.4.0
+  volumes:
+    - ./custom_config:/etc/cayley
+  volumes_from:
+    - cayleydata
   ports:
     - "64210:64210"
+
+cayleydata:
+  image: busybox
+  volumes:
+    - /data
+  command: true
 

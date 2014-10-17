@@ -5,7 +5,7 @@ A Docker image for [Cayley](https://github.com/google/cayley), an open-source gr
 #### Getting Started
 
 ```
-docker run -d -p 64210:64210 saidimu/cayley
+docker run -d -p 64210:64210 saidimu/cayley:v0.4.0
 ```
 
 Then open `http://127.0.0.1:64210` from your browser for the web GUI.
@@ -42,6 +42,9 @@ Then open `http://127.0.0.1:64210` from your browser for the web GUI.
   3. Start a container by mounting the data directory on the host to /data in the container:
 
     ```sh
-    docker run -d -p 64210:64210 -v <data-dir>:/data saidimu/cayley
+    docker run -d -p 64210:64210 -v <data-dir>:/data saidimu/cayley:v0.4.0
     ```
 
+#### Using fig with data-only containers
+
+`fig.yml` includes definitions for a data-only container and a volume mounts for a `custom_config` folder that holds a custom config file you can provide.
