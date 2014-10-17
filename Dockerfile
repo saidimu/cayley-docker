@@ -30,8 +30,8 @@ ADD cayley.cfg /etc/cayley/cayley.cfg
 WORKDIR /opt/cayley
 
 # Default commands
-CMD cayley init -config=$CAYLEY_CFG && \
-    cayley http -config=$CAYLEY_CFG
+CMD cayley init -config=$CAYLEY_CFG -logtostderr=true && \
+    cayley http -config=$CAYLEY_CFG -logtostderr=true
 
 # Expose ports.
 EXPOSE 64210
