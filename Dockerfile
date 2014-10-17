@@ -8,11 +8,13 @@
 FROM dockerfile/ubuntu
 MAINTAINER Said Apale saidimu@gmail.com
 
+ENV CAYLEY_VERSION 0.4.0
+
 # Download Cayley binary.
 RUN \
   mkdir -p /data/ /etc/cayley/ && \
   mkdir -p /opt/cayley && \
-  wget https://github.com/google/cayley/releases/download/v0.4.0/cayley_0.4.0_linux_amd64.tar.gz \
+  wget https://github.com/google/cayley/releases/download/v${CAYLEY_VERSION}/cayley_0.4.0_linux_amd64.tar.gz \
     -O - | tar -xvz --strip=1 -C /opt/cayley && \
   cp /opt/cayley/cayley /usr/local/bin/
 
